@@ -1,5 +1,5 @@
-const podcast = require("./Podcast");
+const Podcast = require("./Podcast");
 
 module.exports = [
-    podcast
-];
+  Podcast
+]

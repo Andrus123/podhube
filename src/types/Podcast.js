@@ -1,4 +1,4 @@
-const { gql } = require("apollo-server");
+const { gql } = require('apollo-server');
 
 module.exports = gql`
   type Podcast {
@@ -6,28 +6,27 @@ module.exports = gql`
     name: String!
     url: String!
   }
-
-  type Query{
-      podcast: [Podcast]
+  input CreatePodcastInput {
+    name: String!
+    url: String!
   }
-
-  input CreatePodcastInput{
-      name: String!
-      url: String!
+  input UpdatePodcastInput {
+    name: String
+    url: String
   }
-
-  input UpdatePodcastInput{
-      name: String
-      url: String
+  input DeletePodcastInput {
+    id: ID!
   }
-
   type DeletePayload{
-      id: ID!
+    id: ID!
   }
-
-  type Mutation{
-      createPodcast(input: CreatePodcastInput!): Podcast!
-      updatePodcast(input: UpdatePodcastInput!): Podcast!
-      deletePodcast(id: ID): DeletePayload!
+  type Query {
+    podcasts: [Podcast]
   }
+  type Mutation {
+    createPodcast(input: CreatePodcastInput!): Podcast!
+    updatePodcast(id: ID!, input: UpdatePodcastInput!): Podcast!
+    deletePodcast(id: ID!): DeletePayload!
+  }
+  
 `;
