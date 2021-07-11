@@ -25,7 +25,7 @@ module.exports = gql`
       id: ID!
   }
 
-  type{
+  type Mutation{
       createPodcast(input: CreatePodcastInput!): Podcast!
       updatePodcast(input: UpdatePodcastInput!): Podcast!
       deletePodcast(id: ID): DeletePayload!
