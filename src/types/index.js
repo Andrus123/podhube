@@ -1,4 +1,4 @@
-const podcast = require("podcast");
+const podcast = require("./Podcast");
 
 module.exports = [
     podcast
